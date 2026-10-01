@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans text-textMain bg-neutralBg min-h-screen overflow-x-hidden flex;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(224, 242, 254, 0.4) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(243, 232, 255, 0.4) 0px, transparent 50%),
+      radial-gradient(at 50% 100%, rgba(253, 224, 242, 0.3) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(124, 92, 255, 0.15);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(124, 92, 255, 0.3);
+}
+
+/* Glassmorphism Styles */
+.glass-panel {
+  @apply bg-white/60 backdrop-blur-xl border border-primary/60 shadow-[0_0_25px_rgba(124,92,255,0.15)] transition-all duration-300;
+}
+
+.glass-card-hover {
+  @apply hover:-translate-y-1.5 hover:scale-[1.015] hover:shadow-glass-hover hover:border-primary/25 hover:bg-white/65;
+}
+
+/* Custom Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes pulse-dot {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+  70% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 2s infinite;
+}
+
+/* React Flow customizations */
+.react-flow__pane {
+  background: transparent !important;
+}
+
+.react-flow__node {
+  border-radius: 50% !important;
+  border: none !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+/* Hide plotly modebar by default for cleaner design */
+.js-plotly-plot .plotly .modebar {
+  display: none !important;
+}
