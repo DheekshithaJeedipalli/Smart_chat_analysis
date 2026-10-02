@@ -10,7 +10,7 @@ import {
   Activity, 
   ChevronRight, 
   Info, 
-  Search, 
+ 
   ShieldCheck, 
   X, 
   Image as ImageIcon, 
@@ -50,9 +50,7 @@ export const Dashboard: React.FC = () => {
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
   // Mock search query interactions
-  const handleQueryClick = (query: string) => {
-    alert(`Searching local indexed text for query: "${query}"...\nFound matches across conversation timelines.`);
-  };
+  
 
   // Media Shared in WhatsApp Chat
   const actualImages = mediaAssets.filter(m => m.type === 'image');

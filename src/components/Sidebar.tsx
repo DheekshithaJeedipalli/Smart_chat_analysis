@@ -7,7 +7,7 @@ import {
   Heart, 
   Cpu, 
   Search, 
-  MessageSquare, 
+  
   ShieldCheck, 
   Check,
   Play

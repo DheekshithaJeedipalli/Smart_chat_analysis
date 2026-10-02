@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useChat } from '../src/context/ChatContext';
-import { 
-  Heart, X, ArrowRight, ChevronRight, ChevronLeft, 
-  Smile, Moon, Flame, Play, Share2, BookOpen, Briefcase, Frown, Angry, MessageSquare
+import {
+  Heart, X, Smile, Flame, Share2, BookOpen, Briefcase, Frown, Angry, MessageSquare
 } from 'lucide-react';
-
 export const ChatWrapped: React.FC = () => {
   const { currentData, setTab } = useChat();
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -29,7 +27,7 @@ export const ChatWrapped: React.FC = () => {
   const p1 = currentData.participantsData[pNames[0]];
   const p2 = currentData.participantsData[pNames[1]];
   const topSender = p1.totalMessages > p2.totalMessages ? p1 : p2;
-  const bottomSender = p1.totalMessages > p2.totalMessages ? p2 : p1;
+  
 
   // Calculate night owl (most active night) - using generic stat since we don't track 12-5am specifically yet
   // We'll use random or just longest session proxy for now, but to be accurate we'd need time.

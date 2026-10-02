@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Plot from 'react-plotly.js';
-import { 
-  Sparkles, Bot, AlertCircle, Info, BarChart3, List, BookOpen, 
-  Smile, MessageCircle, Heart, Laugh, Globe, Languages 
+import {
+  Sparkles, Bot, AlertCircle, Info
 } from 'lucide-react';
 
 import { useChat } from '../src/context/ChatContext';

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useChat } from '../src/context/ChatContext';
-import { Users, Calendar, Download, Image as ImageIcon, Video, Mic, FileText, Link as LinkIcon, Smile, StickyNote, BarChart2, Edit3, Zap, CheckCircle2, MessageSquare, Clock } from 'lucide-react';
+import { Users, Calendar, Download, Image as ImageIcon, Video, Mic, FileText, Link as LinkIcon, Smile, BarChart2, Edit3, Zap, CheckCircle2, MessageSquare, Clock } from 'lucide-react';
 import Plot from 'react-plotly.js';
 
 export const PeopleParticipants: React.FC = () => {
@@ -20,15 +20,9 @@ export const PeopleParticipants: React.FC = () => {
   const p1 = pData && p1Name ? pData[p1Name] : null;
   const p2 = pData && p2Name ? pData[p2Name] : null;
 
-  const [searchQuery, setSearchQuery] = useState('');
+  
 
-  const searchResults = React.useMemo(() => {
-    if (!searchQuery.trim() || !currentData.rawMessages) return [];
-    const query = searchQuery.toLowerCase();
-    return currentData.rawMessages
-      .filter(m => (m.sender === (p1?.name || '') || m.sender === (p2?.name || '')) && m.text.toLowerCase().includes(query))
-      .slice(0, 50);
-  }, [searchQuery, currentData.rawMessages, p1, p2]);
+  
 
   if (!p1 || !p2) {
     return <div className="p-10 text-textMuted font-medium">Not enough participant data to compare.</div>;
