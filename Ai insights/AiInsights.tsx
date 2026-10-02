@@ -35,7 +35,7 @@ export const AiInsights: React.FC = () => {
     const fetchInsights = async () => {
       try {
         const payload = { messages: currentData?.rawMessages || [] };
-        const response = await axios.post('http://localhost:3001/api/analyze-chat', payload);
+        const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/analyze-chat`, payload);
         setData(response.data);
       } catch (error) {
         console.error('Error fetching AI insights:', error);
